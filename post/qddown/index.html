@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>学习强国慕课下载器 | Code blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xyhshell.github.io/favicon.ico?v=1653288973771">
+<link rel="stylesheet" href="https://xyhshell.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S4VZ5G7WQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S4VZ5G7WQH');
+</script>
+
+
+    <meta name="description" content="用于下载学习强国 学习视频
+
+1.声明
+
+本项目二改自 https://github.com/jianboy/crawl_xuexi
+** 仅做交流与测试，请勿用于非法途径**
+
+
+python 3.9(64bit) 64位系统适配
+
+2...." />
+    <meta name="keywords" content="编码" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xyhshell.github.io">
+        <img src="https://xyhshell.github.io/images/avatar.png?v=1653288973771" class="site-logo">
+        <h1 class="site-title">Code blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://xyhshell.github.io" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/post/About" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+  
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xyhshell" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+
+		<a class="rss" href="https://xyhshell.github.io/atom.xml" target="_blank">RSS</a>
+		
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    
+    <div class="site-description">
+      敬畏自然，技术至上
+    </div>
+    
+    <div class="site-footer">
+      ❤️ 希望你能好好的 To you ! ❤️ <br><br>  Copyrights © 2021-2022 <a href="https://github.com/xyhshell" target="_blank">Jingmo - Xiao</a>
+    </div>
+    
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">学习强国慕课下载器</h2>
+            <div class="post-date">2021-09-23</div>
+            
+            <div class="post-content" v-pre>
+              <p>用于下载<a href="https://xuexi.cn">学习强国</a> 学习视频</p>
+<!-- more -->
+<h1 id="1声明">1.声明</h1>
+<blockquote>
+<p>本项目二改自 https://github.com/jianboy/crawl_xuexi<br>
+** 仅做交流与测试，请勿用于非法途径**</p>
+</blockquote>
+<blockquote>
+<p>python 3.9(64bit) 64位系统适配</p>
+</blockquote>
+<h1 id="2灵感">2.灵感</h1>
+<p>源于学习慕课中有许多高质量的视频</p>
+<h1 id="3实现原因">3.实现原因</h1>
+<p>不是任何时候都网络可供观看<br>
+原网站不支持下载与倍速</p>
+<h1 id="4功能实现">4.功能实现</h1>
+<blockquote>
+<ul>
+<li>在原作者的功能基础上:</li>
+</ul>
+<blockquote>
+<ul>
+<li>已实现多线程下载</li>
+<li>已实现“学习强国APP”下任意的“学习慕课”栏目视频下载</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>优化界面排版，说明，功能提示</li>
+<li>优化文件储存逻辑</li>
+<li>优化使用逻辑（仅仅是我的逻辑）</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="提供程序入口代码详细内容见github仓库点击跳转">提供程序入口代码，详细内容见GitHub仓库：<a href="https://github.com/Xyhshell/crawl_xuexi">点击跳转</a></h2>
+<pre><code class="language-python">if __name__ == '__main__':
+    print(&quot; | &quot; + '-'*56)
+    print(&quot; |  1.程序正常情况不会闪退，理论无Bug&quot;)
+    print(&quot; |  2.程序可多开，每个程序工作时附带10个线程，请依主机性能使用&quot;)
+    print(&quot; |  4.程序二改于：https://github.com/jianboy/crawl_xuexi -*侵删*-&quot;)
+    print(&quot; |  3.程序仅供测试，请合理化使用，请勿用于灰产&quot;)
+    print(&quot; |  5.学习强国，YYDS!&quot;)
+    print(&quot; | &quot; + '-'*56 + '\n')
+
+    start_time = time.time()
+    this_path = filepath.openpath() + '/'
+
+    if len(sys.argv) == 2:
+        url = sys.argv[1]
+    else:
+        url = input(
+            &quot;&gt; 推荐输入“学习慕课”界面下的视频链接：\n\r（eg：https://www.xuexi.cn/9f584b49d8a7386a4cf248ce16f5e667/9b0f04ec6509904be734f5f609a3604a.html）\n\r&gt; :&quot;)
+    crawl(url)
+    print(&quot;last time: {} s&quot;.format(time.time() - start_time))
+    print(&quot;\n\r&gt; 全部视频下载完成，回车退出！&quot;)
+    input('')
+</code></pre>
+<hr>
+<h1 id="关于后续">关于后续</h1>
+<blockquote>
+<p>暂不提供可执行文件，有能力自行编译👍<br>
+能用就行</p>
+</blockquote>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xyhshell.github.io/tag/bian-ma/" class="tag">
+                    编码
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xyhshell.github.io/post/bingying/">
+                  <h3 class="post-title">
+                    Bing(必应)每日一图下载
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

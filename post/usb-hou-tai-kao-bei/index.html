@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Usb 后台拷贝 | Code blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xyhshell.github.io/favicon.ico?v=1653288973771">
+<link rel="stylesheet" href="https://xyhshell.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S4VZ5G7WQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S4VZ5G7WQH');
+</script>
+
+
+    <meta name="description" content="用户后台静默拷贝文件
+
+开发环境
+
+1.python 3.7.5
+2.pycharm
+
+初代版本，后续未更新！
+Python 源码
+import os
+import time
+import shutil
+from os.path impor..." />
+    <meta name="keywords" content="编码" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xyhshell.github.io">
+        <img src="https://xyhshell.github.io/images/avatar.png?v=1653288973771" class="site-logo">
+        <h1 class="site-title">Code blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://xyhshell.github.io" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/post/About" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+  
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xyhshell" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+
+		<a class="rss" href="https://xyhshell.github.io/atom.xml" target="_blank">RSS</a>
+		
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    
+    <div class="site-description">
+      敬畏自然，技术至上
+    </div>
+    
+    <div class="site-footer">
+      ❤️ 希望你能好好的 To you ! ❤️ <br><br>  Copyrights © 2021-2022 <a href="https://github.com/xyhshell" target="_blank">Jingmo - Xiao</a>
+    </div>
+    
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Usb 后台拷贝</h2>
+            <div class="post-date">2021-06-30</div>
+            
+            <div class="post-content" v-pre>
+              <p>用户后台静默拷贝文件</p>
+<!-- more -->
+<h1 id="开发环境">开发环境</h1>
+<blockquote>
+<p>1.python 3.7.5<br>
+2.pycharm</p>
+</blockquote>
+<h2 id="初代版本后续未更新"><strong>初代版本，后续未更新！</strong></h2>
+<p>Python 源码</p>
+<pre><code class="language-python">import os
+import time
+import shutil
+from os.path import join, getsize
+
+# U盘路径
+USB = 'E:\\'
+
+# 保存路径
+SAVE = 'D:\\U盘资料'
+
+# 获取U盘中所有文件夹，及文件大小
+
+# 形参：理解函数可以实现某种功能的模块，方法。实参，申明实参时，要给一个确定的值
+
+def get_dir_size(dir):
+    # 初始化
+    size = 0
+    for root, dirs, files in os.walk(dir):
+        # 获取U盘中资料大小，推导式
+        size += sum(getsize(join(root, name)) for name in files)
+    print(size)
+    return size
+
+
+# 专门做拷贝
+
+def usb_copy():
+    # 是shutil的内置函数，专做拷贝
+    shutil.copytree(USB, SAVE)
+
+
+def main():
+    old_dirsize = 0
+    # 一直运行，不退出，死循环
+    while True:
+        if os.path.exists(USB):
+            print('检测到优盘.......')
+            new_dirsize = get_dir_size(USB)
+            # 做文件夹判断，如果文件夹大小不等于U盘大小
+            # 这样就确定没有复制文件
+            if old_dirsize != new_dirsize:
+                usb_copy()
+                old_dirsize = new_dirsize
+            else:
+                print('没有变化......')
+        else:
+            print('暂时没有检测到优盘......')
+
+        print('开始休眠')
+        time.sleep(5)
+        print('休眠文件.....')
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<p>仅供交流, 切勿用于非法途径<br>
+2019.11.21 (文件创建初期版本)</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xyhshell.github.io/tag/bian-ma/" class="tag">
+                    编码
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xyhshell.github.io/post/windows-off/">
+                  <h3 class="post-title">
+                    Windows实用工具
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

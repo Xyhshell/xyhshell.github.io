@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Autoplay(自动播放) | Code blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xyhshell.github.io/favicon.ico?v=1653288973771">
+<link rel="stylesheet" href="https://xyhshell.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S4VZ5G7WQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S4VZ5G7WQH');
+</script>
+
+
+    <meta name="description" content="某视频学习平台视频自动化自动播放
+
+声明
+
+本项目仅做交流与测试，请勿用于非法途径
+
+
+Auto_playV5.2  update log
+
+python 3.6 +
+chrome 78 +
+windows 10 +
+
+功能实现
+
+
+多用户..." />
+    <meta name="keywords" content="编码" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xyhshell.github.io">
+        <img src="https://xyhshell.github.io/images/avatar.png?v=1653288973771" class="site-logo">
+        <h1 class="site-title">Code blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://xyhshell.github.io" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/post/About" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+  
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xyhshell" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+
+		<a class="rss" href="https://xyhshell.github.io/atom.xml" target="_blank">RSS</a>
+		
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    
+    <div class="site-description">
+      敬畏自然，技术至上
+    </div>
+    
+    <div class="site-footer">
+      ❤️ 希望你能好好的 To you ! ❤️ <br><br>  Copyrights © 2021-2022 <a href="https://github.com/xyhshell" target="_blank">Jingmo - Xiao</a>
+    </div>
+    
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Autoplay(自动播放)</h2>
+            <div class="post-date">2021-12-11</div>
+            
+            <div class="post-content" v-pre>
+              <p>某视频学习平台视频自动化自动播放</p>
+<!-- more -->
+<h1 id="声明">声明</h1>
+<blockquote>
+<p>本项目仅做交流与测试，请勿用于非法途径</p>
+</blockquote>
+<hr>
+<h1 id="auto_playv52-update-log">Auto_playV5.2  update log</h1>
+<blockquote>
+<p>python 3.6 +<br>
+chrome 78 +<br>
+windows 10 +</p>
+</blockquote>
+<h1 id="功能实现">功能实现</h1>
+<blockquote>
+<ul>
+<li>多用户学习无忧</li>
+<li>账号安全性优化</li>
+<li>视频播放智能判断与播放控制优化</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="auto_playv1-old_log">Auto_playV1 old_log:</h1>
+<blockquote>
+<p>重置与优化，删除冗余，优化播放控制，部分内容未测试<br>
+自动化测试浏览器: 谷歌73.0.3683.86（32位）<br>
+python 3.7(64bit) 64位系统适配</p>
+</blockquote>
+<h1 id="功能实现-2">功能实现</h1>
+<blockquote>
+<p>1.全自动化登录与课程学习<br>
+2.已实现多用户登录学习<br>
+3.已实现多参数修改<br>
+4.已实现多线程播放<br>
+5.优化使用逻辑</p>
+</blockquote>
+<p>提供程序入口代码，详细内容见GitHub仓库：<a href="https://github.com/Xyhshell/Auto_play">点击跳转</a></p>
+<pre><code class="language-python">if __name__ == '__main__':
+    cfg1 = r&quot;./auto.ini&quot;
+    conf = configparser.ConfigParser()
+    conf.read(cfg1, encoding='utf-8')
+
+    #  默认的课程顺序，来源：https://k.cnki.net/NewTheme/Index/288
+    mystudy = [
+        &quot;https://k.cnki.net/CInfo/Index/15088&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/15013&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14994&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14902&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14865&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14824&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14760&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14640&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14428&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14350&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14320&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14207&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/14148&quot;,
+        &quot;https://k.cnki.net/CInfo/Index/13947&quot;
+    ]
+
+    all_user = int(conf.get(&quot;default&quot;, &quot;all_user&quot;))
+    print(f'获取到{str(all_user)}个用户')
+
+    a_us = 0
+    for user in range(1, all_user+1):
+        print(f&quot;******* 第 {str(user)} 用户开始学习*******&quot;)
+        Thread(target=thering_, args=(user,)).start()
+        print(f&quot;\n线程{user}启动成功...&quot;)
+        a_us += 1
+        time.sleep(2)
+</code></pre>
+<hr>
+<h1 id="关于后续">关于后续</h1>
+<blockquote>
+<p>暂不提供可执行文件，有能力自行编译👍<br>
+能用就行</p>
+</blockquote>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xyhshell.github.io/tag/bian-ma/" class="tag">
+                    编码
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xyhshell.github.io/post/adb-v2/">
+                  <h3 class="post-title">
+                    Adb安卓应用管理器V2
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

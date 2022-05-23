@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Windows实用工具 | Code blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xyhshell.github.io/favicon.ico?v=1653288973771">
+<link rel="stylesheet" href="https://xyhshell.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S4VZ5G7WQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S4VZ5G7WQH');
+</script>
+
+
+    <meta name="description" content="Windows实用工具 · 定时关机
+
+元
+
+2018 步入编码：
+初始易语言，意为 元
+
+文件说明:
+
+1.本工具使用易语言编写
+2.win10 , win7均完美运行!
+3.原理: 采用cmd命令,对系统实施指令
+4.将命令封装成可视化..." />
+    <meta name="keywords" content="编码" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xyhshell.github.io">
+        <img src="https://xyhshell.github.io/images/avatar.png?v=1653288973771" class="site-logo">
+        <h1 class="site-title">Code blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://xyhshell.github.io" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/post/About" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+  
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xyhshell" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+
+		<a class="rss" href="https://xyhshell.github.io/atom.xml" target="_blank">RSS</a>
+		
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    
+    <div class="site-description">
+      敬畏自然，技术至上
+    </div>
+    
+    <div class="site-footer">
+      ❤️ 希望你能好好的 To you ! ❤️ <br><br>  Copyrights © 2021-2022 <a href="https://github.com/xyhshell" target="_blank">Jingmo - Xiao</a>
+    </div>
+    
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Windows实用工具</h2>
+            <div class="post-date">2021-05-30</div>
+            
+            <div class="post-content" v-pre>
+              <p>Windows实用工具 · 定时关机</p>
+<!-- more -->
+<h1 id="元">元</h1>
+<blockquote>
+<p>2018 步入编码：</p>
+<h1 id="初始易语言意为-元">初始易语言，意为 元</h1>
+</blockquote>
+<h2 id="文件说明">文件说明:</h2>
+<blockquote>
+<p>1.本工具使用易语言编写<br>
+2.win10 , win7均完美运行!<br>
+3.原理: 采用cmd命令,对系统实施指令<br>
+4.将命令封装成可视化程序,操作便捷</p>
+</blockquote>
+<p>不善言辞，直接看图：<br>
+（引用本人52论坛图片）<br>
+<img src="https://attach.52pojie.cn/forum/202002/16/185359g554zv959anzz4v9.png" alt="" loading="lazy"></p>
+<figure data-type="image" tabindex="1"><img src="https://attach.52pojie.cn/forum/202002/16/185401pk6stdifmgifzfsz.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://attach.52pojie.cn/forum/202002/16/185405yrcx232y55rq7z2x.png" alt="" loading="lazy"></figure>
+<blockquote>
+<p>集成大部分实用命令，日常够用<br>
+逻辑应该没问题，也希望大家不要做反人类操作！</p>
+</blockquote>
+<hr>
+<h1 id="执行文件链接">执行文件链接</h1>
+<blockquote>
+<p>工具还是很早以前写的已进行诸多测试尚未发现bug,发现问题还望指正,谢谢!<br>
+链接:https://www.lanzous.com/i9epn3e</p>
+</blockquote>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xyhshell.github.io/tag/bian-ma/" class="tag">
+                    编码
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xyhshell.github.io/post/huojing/">
+                  <h3 class="post-title">
+                    名人传（霍金）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

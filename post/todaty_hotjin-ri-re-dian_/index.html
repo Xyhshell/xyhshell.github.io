@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Todaty_Hot（今日热点） | Code blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xyhshell.github.io/favicon.ico?v=1653288973771">
+<link rel="stylesheet" href="https://xyhshell.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S4VZ5G7WQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S4VZ5G7WQH');
+</script>
+
+
+    <meta name="description" content="一款桌面端新闻归集软件
+
+Todaty_Hot(今日热点)
+构建起因
+
+各平台今日热搜热文获取，让你一眼知天下！
+在信息飞速传播的今天，流量为王，信息孤岛就此产生，有时不得不辗转各个平台，网站查阅最新消息。
+
+
+于是，为了紧跟时代步伐，分秒..." />
+    <meta name="keywords" content="编码" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xyhshell.github.io">
+        <img src="https://xyhshell.github.io/images/avatar.png?v=1653288973771" class="site-logo">
+        <h1 class="site-title">Code blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://xyhshell.github.io" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/post/About" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+  
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xyhshell" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+
+		<a class="rss" href="https://xyhshell.github.io/atom.xml" target="_blank">RSS</a>
+		
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    
+    <div class="site-description">
+      敬畏自然，技术至上
+    </div>
+    
+    <div class="site-footer">
+      ❤️ 希望你能好好的 To you ! ❤️ <br><br>  Copyrights © 2021-2022 <a href="https://github.com/xyhshell" target="_blank">Jingmo - Xiao</a>
+    </div>
+    
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Todaty_Hot（今日热点）</h2>
+            <div class="post-date">2021-09-02</div>
+            
+            <div class="post-content" v-pre>
+              <p>一款桌面端新闻归集软件</p>
+<!-- more -->
+<h1 id="todaty_hot今日热点">Todaty_Hot(今日热点)</h1>
+<h2 id="构建起因">构建起因</h2>
+<blockquote>
+<p>各平台今日热搜热文获取，让你一眼知天下！<br>
+在信息飞速传播的今天，流量为王，信息孤岛就此产生，有时不得不辗转各个平台，网站查阅最新消息。</p>
+<blockquote>
+<ul>
+<li>于是，为了紧跟时代步伐，分秒必争，让我们与时俱进！</li>
+</ul>
+</blockquote>
+</blockquote>
+<hr>
+<p>文件源码，暂时未传至Github</p>
+<pre><code class="language-python">#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+&quot;&quot;&quot;
+@author: jingmo
+@file:   today_hot.py
+@time:   2022/04/12 20:32:45
+&quot;&quot;&quot;
+ 
+import tkinter
+from threading import Thread
+from tkinter import ttk, messagebox
+from requests import get
+from lxml import etree
+import webbrowser
+ 
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+}
+ 
+ 
+def gogo_start(item_url):
+    webbrowser.open(item_url)
+ 
+ 
+def app_info():
+    messagebox.showinfo('提示', &quot;本软件内所有新闻内容均来自:\n【今日热点：https://tophub.today】\n其内容未经证实不得肆意造谣!!!\n同意请确定/否则请关闭并删除本软件！&quot;)
+ 
+ 
+class SpinderMain(object):
+    def __init__(self):
+        self.all_url = {
+            '微博热搜': 'https://tophub.today/n/KqndgxeLl9',
+            '微信 &amp;#8231; 24h热文榜': 'https://tophub.today/n/WnBe01o371',
+            '澎湃 &amp;#8231; 首页要闻': 'https://tophub.today/n/5PdMxAbvmg',
+            '百度实时热点': 'https://tophub.today/n/Jb0vmloB1G',
+            '吾爱破解 &amp;#8231; 今日热帖': 'https://tophub.today/n/NKGoRAzel6',
+            '吾爱破解 &amp;#8231; 原创发布区': 'https://tophub.today/n/qndgO7LdLl',
+            '知乎热榜': 'https://tophub.today/n/mproPpoq6O',
+            '虎嗅热文': 'https://tophub.today/n/5VaobgvAj1',
+            '哔哩哔哩全站排行': 'https://tophub.today/n/74KvxwokxM',
+            '抖音热搜': 'https://tophub.today/n/K7GdaMgdQy',
+            '抖音 &amp;#8231; 正能量榜': 'https://tophub.today/n/1yjvQqDvbg',
+            '豆瓣电影 &amp;#8231; 最受欢迎的影评': 'https://tophub.today/n/2me38jrowj'
+     
+        }
+         
+        # 初始化下拉列表
+        self.add_url_box()
+        # 初始化完毕后，加载新闻
+        self.post_url()
+         
+    def delButton(self, tree):
+        x = tree.get_children()
+        for item in x:
+            tree.delete(item)
+ 
+    def get_text(self, hot_url):
+        response = get(url=hot_url, headers=HEADERS)
+        html = etree.HTML(response.content.decode('utf-8'))
+        self.delButton(tree)
+        ind = 0[/align]
+ 
+[align=left]        # 脱敏 处理  本处是一个网页元素摘取
+ 
+ 
+    def add_url_box(self):
+        # 创建下拉菜单
+        self.xaunze_ = ttk.Combobox(root, font=('宋体', 16, &quot;bold&quot;), width=18, state=&quot;readonly&quot;)
+        hot_title_list = []
+        for hot_title in self.all_url:
+            hot_title_list.append(hot_title)
+            # 设置下拉菜单中的值
+            self.xaunze_['value'] = tuple(hot_title_list)
+             
+        # 设置默认值，即默认下拉框中的内容
+        self.xaunze_.current(0)
+        self.xaunze_.place(x=14, y=14)
+ 
+    def post_url(self):
+        hot_title = self.xaunze_.get()
+        title_url = self.all_url[hot_title]
+        Thread(target=self.get_text, args=(title_url,)).start()
+        # self.get_text(hot_url=title_url)
+         
+    def gogo(self):
+        if str(len(tree.selection())) != &quot;0&quot;:
+            for items in tree.selection():
+                item_text = tree.item(items, &quot;values&quot;)[2]
+                print(&quot;已选择：&quot; + item_text)  # 输出所选行的第一列的值
+                if item_text != &quot;&quot;:
+                    Thread(target=gogo_start, args=(item_text,)).start()
+        else:
+            messagebox.showinfo('提示', &quot;没有选择新闻词条！&quot;)
+ 
+ 
+# 主入口
+if __name__ == '__main__':
+    root = tkinter.Tk()
+    root.title(&quot;Taday_Hot 重置版 - 内容来源：【今日热榜】   -  By：jingmo&quot;)  # #窗口标题
+    root.geometry(&quot;700x400+700+360&quot;)  # #窗口位置500后面是字母x
+    root.resizable(False, False)
+    # 加载软件信息
+    Thread(target=app_info, args=()).start()
+    # 表格
+    tree = ttk.Treeview(root, height=16, show=&quot;headings&quot;)  # #创建表格对象
+    style_head = ttk.Style()
+    style_head.configure(&quot;Treeview&quot;, font=&quot;微软雅黑&quot;)
+    tree[&quot;columns&quot;] = (&quot;热度&quot;, &quot;事件&quot;)  # #定义列
+    tree.column(&quot;热度&quot;, width=100, anchor='center')
+    tree.column(&quot;事件&quot;, width=600, anchor='center')
+    tree.heading(&quot;热度&quot;, text=&quot;热度&quot;)
+    tree.heading(&quot;事件&quot;, text=&quot;-- 事件 --&quot;)
+     
+    VScroll1 = ttk.Scrollbar(tree, orient='vertical', command=tree.yview)
+    VScroll1.place(relx=0.97, rely=0.005, relwidth=0.024, relheight=0.99)
+    # 给treeview添加配置
+    tree.configure(yscrollcommand=VScroll1.set)
+    tree.place(x=0, y=50)
+    # 初始化加载对象
+    ui = SpinderMain()
+    chaxunde = tkinter.Button(root, text=&quot;查询&quot;, font=('宋体', 12, &quot;bold&quot;), width=9, command=ui.post_url)
+    chaxunde.config(fg=&quot;orange&quot;, bg=&quot;white&quot;)
+    chaxunde.place(x=260, y=12)
+     
+    app_info_ = tkinter.Button(root, text=&quot;GO—&gt;&quot;, font=('宋体', 12, &quot;bold&quot;), width=12, command=ui.gogo)
+    app_info_.config(fg=&quot;green&quot;, bg=&quot;white&quot;)
+    app_info_.place(x=550, y=12)
+     
+    root.mainloop()
+</code></pre>
+<hr>
+<blockquote>
+<p>2022/05/11 ：<br>
+log：</p>
+<ul>
+<li>修补更新<br>
+<img src="https://attach.52pojie.cn/forum/202205/10/152448rpfmv8fveh8p8svz.png" alt="" loading="lazy"></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<p>2022/05/10 更新：<br>
+log：</p>
+<ul>
+<li>在上一版的基础上去除优化新闻标题排版和文字显示</li>
+<li>新增【更新】功能，默认打开软件自动检测更新（无任何弹窗提示），将在图片中展示。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>下一阶段需求：</p>
+<ul>
+<li>实现用户自定义 [今日热榜] 数据源，实现用户自定义感兴趣的新闻源</li>
+<li>对接邮箱或者企业微信推送，手机直接看新闻（虚假的跨平台）/ 当然考虑多方隐私，可能就弃了，当然期待大家在评论中说说更多的解决的方法（仅文本推送）</li>
+<li>...<br>
+<img src="https://attach.52pojie.cn/forum/202205/07/210940aa6x3rw4z4pc3wp6.png" alt="" loading="lazy"></li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="附件-20220510-更新">附件：（ 2022/05/10 更新）</h1>
+<h2 id="新版链接httpsjingmolanzouqcomietsg04n3jxi">新版链接：https://jingmo.lanzouq.com/ietSG04n3jxi</h2>
+<p>~~ 旧2版链接：https://jingmo.lanzouq.com/i7ghp04g85wb ~~<br>
+~~ 旧2版链接：https://jingmo.lanzouq.com/ixcsP033wrde ~~<br>
+~~ 旧1版链接：https://jingmo.lanzoui.com/iL7Upsci6ti ~~</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xyhshell.github.io/tag/bian-ma/" class="tag">
+                    编码
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xyhshell.github.io/post/usb-hou-tai-kao-bei/">
+                  <h3 class="post-title">
+                    Usb 后台拷贝
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
