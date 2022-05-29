@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>编码 | Code blog</title>
+<meta name="description" content="敬畏自然，技术至上">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- fuck you cdn -->
+<!-- <link rel="stylesheet" href="https://raw.githubusercontent.com/Xyhshell/Oter/main/blog_js/animate.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<!-- fuck you use -->
+<!-- <link rel="stylesheet" href="https://raw.githubusercon/tent.com/Xyhshell/Oter/main/blog_js/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<link rel="shortcut icon" href="https://xyhshell.github.io/favicon.ico?v=1653813900372">
+
+<!-- fuck you cdnjs -->
+<!-- <link rel="stylesheet" href="https://raw.githubusercontent.com/Xyhshell/Oter/main/blog_js/katex.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+<link rel="stylesheet" href="https://xyhshell.github.io/styles/main.css">
+
+
+
+<!-- fuck you cdn -->
+<!-- <script href="https://raw.githubusercontent.com/Xyhshell/Oter/main/blog_js/vue.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!-- fuck you cdn -->
+<!-- <script href="https://raw.githubusercontent.com/Xyhshell/Oter/main/blog_js/highlight.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S4VZ5G7WQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S4VZ5G7WQH');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://xyhshell.github.io">
+        <img class="avatar" src="https://xyhshell.github.io/images/avatar.png?v=1653813900372" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://xyhshell.github.io">
+        <h1 class="site-title">Code blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://xyhshell.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xyhshell.github.io/post/About" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> 编码
+          </h2> 
+        </div>
+
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://xyhshell.github.io/post/autoplay/">
+        <h2 class="post-title">Autoplay(自动播放)</h2>
+      </a>
+      <div class="post-abstract">
+        <p>某视频学习平台视频自动化自动播放</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-12-11</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://xyhshell.github.io/tag/bian-ma/">
+                编码
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://xyhshell.github.io/post/adb-v2/">
+        <h2 class="post-title">Adb安卓应用管理器V2</h2>
+      </a>
+      <div class="post-abstract">
+        <p>用于管理安卓手机所有软件的控制器</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-11-09</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://xyhshell.github.io/tag/bian-ma/">
+                编码
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://xyhshell.github.io/post/webfile-v1/">
+        <h2 class="post-title">WebFile V1 图形化正式版 &amp; V2内网穿透beta</h2>
+      </a>
+      <div class="post-abstract">
+        <p>内网传输工具图形化</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-10-31</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://xyhshell.github.io/tag/bian-ma/">
+                编码
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://xyhshell.github.io/post/webfile-v2/">
+        <h2 class="post-title">WebFile(局域网传输工具)</h2>
+      </a>
+      <div class="post-abstract">
+        <p>二改内网传输配置工具</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-09-30</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://xyhshell.github.io/tag/bian-ma/">
+                编码
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://xyhshell.github.io/post/qddown/">
+        <h2 class="post-title">学习强国慕课下载器</h2>
+      </a>
+      <div class="post-abstract">
+        <p>用于下载<a href="https://xuexi.cn">学习强国</a> 学习视频</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-09-23</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://xyhshell.github.io/tag/bian-ma/">
+                编码
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+  
+    <a href="https://xyhshell.github.io/tag/bian-ma/page/2" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
+  
+</div>
+
+
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">敬畏自然，技术至上</div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/xyhshell" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  ❤️ 希望你能好好的 To you ! ❤️ <br><br>  Copyrights © 2021-2022 <a href="https://github.com/xyhshell" target="_blank">Jingmo - Xiao</a> | <a class="rss" href="https://xyhshell.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
