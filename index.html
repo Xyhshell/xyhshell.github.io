@@ -1,929 +1,577 @@
-<!DOCTYPE html>
-<html>
-  
-<head>
-  <meta charset="utf-8">
-  <meta name="jingmo" content="jingmo" />
-  
-  
-  <title>Code blog</title>
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Code blog - 敬畏自然 技术至上</title><meta name="keywords" content="code jingmo blog"><meta name="author" content="jingmo"><meta name="copyright" content="jingmo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="code jingmo blog 静默">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Code blog">
+<meta property="og:url" content="http://xyhshell.github.io/index.html">
+<meta property="og:site_name" content="Code blog">
+<meta property="og:description" content="code jingmo blog 静默">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180">
+<meta property="article:author" content="jingmo">
+<meta property="article:tag" content="code jingmo blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180"><link rel="shortcut icon" href="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180"><link rel="canonical" href="http://xyhshell.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: jingmo","link":"链接: ","source":"来源: Code blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Code blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-06-26 00:17:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  
-    <meta name="keywords" content="jingmo, 静默, blog, shell" />
-  
-
-  
-  <meta name="description" content="codeblog">
-
-  
-    <link rel="alternate" href="/atom.xml" title="Code blog" type="application/atom+xml">
-  
-
-  
-
-  
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
-  
-
-  
-
-  
-    <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-  
-
-  <script>
-  // theme-ad's config script
-  // it can be used in every script
-  
-  window.AD_CONFIG = {
-    leancloud: {"appid":null,"appkey":null,"comment":false,"count":false},
-    welcome: {"enable":true,"interval":30},
-    start_time: "2021-01-01",
-    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
-    is_post: false,
-    lock: false,
-    author: "jingmo",
-    share: {"twitter":true,"facebook":true,"weibo":true,"qq":true,"wechat":true},
-    mathjax: true,
-    page_type: "",
-    root: "/"
-  };
-</script>
-
-  
-<script src="/vendor/sha256.min.js"></script>
-<script src="/js/auth.js"></script>
-<script src="/js/index.js"></script>
-<script src="/vendor/qrcode.min.js"></script>
-
-
-  
-    <link rel="icon" href="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180">
-    <link rel="apple-touch-icon" href="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180">
-  
-
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-  
-<link rel="stylesheet" href="/css/index.css">
-<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
-
-
-  
-
-
-  <script>
-    (function(){
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
         }
-        else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
         }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-    </script>
-    
-<meta name="generator" content="Hexo 5.4.2"></head>
-  <body>
-    <header class="site-header">
-  <div class="site-header-brand">
-    
-      <span class="site-header-brand-title">
-        <a href="/">CodeBlog</a>
-      </span>
-    
-    
-      <!-- <span class="site-header-brand-motto"> | <h3>  · 敬畏自然 技术至上</h3></span> -->
-      <span class="site-header-brand-motto">  <h3>  · 敬畏自然 技术至上</h3></span>
-    
-      
-  </div>
-  <div class="site-header-right">
-    <nav class="site-header-navigation">
-      
-        <a href="/" target="_self">首页</a>
-      
-        <a href="/archives/" target="_self">归档</a>
-      
-        <a href="/tags/" target="_self">标签</a>
-      
-        <a href="/about/" target="_self">关于</a>
-      
-    </nav>
-    <div class="site-header-btn">
-      
-        <a href="https://github.com/xyhshell/" target="_blank" id="site-github">
-          <i class="fa fa-github-alt"></i>
-        </a>
-      
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-      <a href="javascript:void(0);" id="site-search">
-        <i class="fa fa-search"></i>
-      </a>
-      <a href="javascript:void(0);" id="site-nav-btn">
-        <i class="fa fa-ellipsis-v"></i>
-      </a>
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('http://tool.liumingye.cn/bingimg/img.php')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Code blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Code blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/xyhshell" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:jingmoxyh@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jingmo/" title="随笔 - 随缘更新 - for jingmo">随笔 - 随缘更新 - for jingmo</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2098-12-31T17:01:01.000Z" title="发表于 2099-01-01 01:01:01">2099-01-01</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/jingmo/">jingmo</a></span></div><div class="content">个人随笔
 
-    </div>
-  </div>
-</header>
-<nav class="table-content" id="site-nav">
-  <div class="table-content-title">
-    <span>导航</span>
-  </div>
-  <div class="table-content-main">
-    <ol class="toc">
-      
-        <li class="toc-item">
-          <a href="/" target="_self">
-            首页
-          </a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="/archives/" target="_self">
-            归档
-          </a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="/tags/" target="_self">
-            标签
-          </a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="/about/" target="_self">
-            关于
-          </a>
-        </li>
-      
-    </ol>
-  </div>
-</nav>
-<div id="site-process"></div>
-    <main>
-      <div class="home">
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2099-01-01
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/jingmo/">随笔 - 随缘更新 - for jingmo</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>个人随笔</p>
-            
-          </div>
-          <a class="home-article-read" href="/jingmo/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/jingmo/"><i class="fa fa-tags"></i>jingmo</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2022-06-21
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/mklink_rmdir_tools/">Mklink 软连接操作器V2.1</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>Mklink 软连接操作器</p>
-            
-          </div>
-          <a class="home-article-read" href="/mklink_rmdir_tools/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2022-06-19
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/selenium_webdriver/">selenium窗口设置</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>selenium 隐藏webdriver窗口</p>
-            
-          </div>
-          <a class="home-article-read" href="/selenium_webdriver/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-             
-              <a href="/tags/%E7%AC%94%E8%AE%B0%E6%95%99%E7%A8%8B/"><i class="fa fa-tags"></i>笔记教程</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2022-06-14
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/autoplaygui/">Autoplay(自动播放GUI)</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>某视频学习平台视频自动化自动播放（gui修改版）</p>
-            
-          </div>
-          <a class="home-article-read" href="/autoplaygui/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-12-11
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/autoplay/">Autoplay(自动播放)</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>某视频学习平台视频自动化自动播放</p>
-            
-          </div>
-          <a class="home-article-read" href="/autoplay/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-11-09
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/adb-v2/">Adb安卓应用管理器V2</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>用于管理安卓手机所有软件的控制器</p>
-            
-          </div>
-          <a class="home-article-read" href="/adb-v2/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-10-31
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/webfile-v1/">WebFile V1 图形化正式版 & V2内网穿透beta</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>内网传输工具图形化</p>
-            
-          </div>
-          <a class="home-article-read" href="/webfile-v1/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-09-30
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/webfile-v2/">WebFile(局域网传输工具)</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>二改内网传输配置工具</p>
-            
-          </div>
-          <a class="home-article-read" href="/webfile-v2/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-09-23
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/qddown/">学习强国慕课下载器</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p> 用于下载<a target="_blank" rel="noopener" href="https://xuexi.cn/">学习强国</a> 学习视频</p>
-            
-          </div>
-          <a class="home-article-read" href="/qddown/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-09-21
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/bingying/">Bing(必应)每日一图下载</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>一款更新windows桌面壁纸软件</p>
-            
-          </div>
-          <a class="home-article-read" href="/bingying/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-09-20
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/beyond/">名人传（黄家驹 & beyond）</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>beyond 🤘</p>
-            
-          </div>
-          <a class="home-article-read" href="/beyond/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E5%90%8D%E4%BA%BA%E4%BC%A0/"><i class="fa fa-tags"></i>名人传</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-09-02
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/todaty_hotjin-ri-re-dian/">Todaty_Hot（今日热点）</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>一款桌面端新闻归集软件</p>
-            
-          </div>
-          <a class="home-article-read" href="/todaty_hotjin-ri-re-dian/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-06-30
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/usb-hou-tai-kao-bei/">Usb 后台拷贝</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>用户后台静默拷贝文件</p>
-            
-          </div>
-          <a class="home-article-read" href="/usb-hou-tai-kao-bei/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-05-30
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/windows-off/">Windows实用工具</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>Windows实用工具 · 定时关机</p>
-            
-          </div>
-          <a class="home-article-read" href="/windows-off/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-05-26
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/huojing/">名人传（霍金）</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>斯蒂芬·威廉·霍金</p>
-            
-          </div>
-          <a class="home-article-read" href="/huojing/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E5%90%8D%E4%BA%BA%E4%BC%A0/"><i class="fa fa-tags"></i>名人传</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-05-22
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/taoyunming/">名人传（陶渊明）</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>陶渊明</p>
-            
-          </div>
-          <a class="home-article-read" href="/taoyunming/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E5%90%8D%E4%BA%BA%E4%BC%A0/"><i class="fa fa-tags"></i>名人传</a>
-             
-              <a href="/tags/%E8%AF%97%E8%AF%8D/"><i class="fa fa-tags"></i>诗词</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="home-article-wrapper clearfix">
-      <div class="home-article" data-cover="false">
-        <div class="home-article-inner" data-cover="false">
-          <div class="passage-meta">
-            <span>
-              <i class="fa fa-calendar"></i>2021-03-02
-            </span>
-            
-            
-              <span>
-                | <i class="fa fa-unlock-alt"></i>UNLOCK
-              </span>
-            
-          </div>
-          <h1 class="home-article-title">
-            <a href="/hexoconfig/">HEXO 相关参数及配置</a>
-          </h1>
-          <div class="home-article-content passage-article">
-            
-              <p>Hexo 博客配置</p>
-            
-          </div>
-          <a class="home-article-read" href="/hexoconfig/">
-            READ MORE >>>
-          </a>
-          
-            <div class="passage-tags">
-             
-              <a href="/tags/%E7%AC%94%E8%AE%B0%E6%95%99%E7%A8%8B/"><i class="fa fa-tags"></i>笔记教程</a>
-            
-            </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-</div>
-    </main>
-    
-    <div class="site-footer-wrapper">
-  <footer class="site-footer">
-    
+欢迎来到我的世界🌏
+随笔不限于随笔
+
+《写在前面》
+
+此篇永久置顶至公元2099年最后一片净土 — 我的世界也由此而生公告最后更新于：2022/06/21
 
 
-    
-      <div class="site-footer-info">
-        <i class="fa fa-paw"></i>
-        <span id="busuanzi_container_site_pv">您是本站第 <span id="busuanzi_value_site_pv"></span> 位访客</span>
-      </div>
-    
+随笔 - (Jingmo`s &amp; Xiao &amp; null)2022/06/21
 
-    <div class="site-footer-info">
-      <i class="fa fa-clock-o"></i> 本站已在风雨中飘摇 <span id="site-time"></span>
-    </div>
+静心修道，乐于普生
 
-    
-    <div class="site-footer-info">
-      <i class="fa fa-copyright"></i> 
-      2021 <a href="https://github.com/Xyhshell/xyhshell.github.io" target="_blank">Code blog</a>.
-      Created by <a href="https://github.com/Xyhshell/" target="_blank">Jingmo</a>.
-      All rights reserved.
-    </div>
-  </footer>
-</div>
-    <div id="site-layer" style="display:none;">
-  <div class="site-layer-content">
-    <div class="site-layer-header">
-      <span class="site-layer-header-title" id="site-layer-title"></span>
-      <i class="fa fa-close" id="site-layer-close"></i>
-    </div>
-    <div class="site-layer-body" id="site-layer-container">
-      <div class="site-layer-input" id="site-layer-search" style="display: none;">
-        <div class="site-layer-input-choose">
-          <a href="javascript:void(0);" title="Change Search Engine">Bing</a>
-        </div>
-        <input type="text">
-        <i class="fa fa-search"></i>
-      </div>
-      
-        <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
-          
-            <div>
-              <img src="/images/1653196680830.jpg" alt="WeChat">
-              
-                <p>WeChat</p>
-              
-            </div>
-          
-        </div>
-      
-      <div id="site-layer-welcome" style="display:none;"></div>
-    </div>
-  </div>
-</div>
-    
+以自在而乐在，以应为而乐于  
 
-<div class="bottom-bar">
-  <div class="bottom-bar-left">
-    <a href="javascript:void(0);" data-enable="false">
-      <i class="fa fa-arrow-left"></i>
-    </a>
-    <a href="javascript:void(0);" data-enable="false">
-      <i class="fa fa-arrow-right"></i>
-    </a>
-  </div>
-  <div class="bottom-bar-right">
-    <a href="javascript:void(0);" data-enable="false" id="site-toc-show-btn">
-      <i class="fa fa-bars"></i>
-    </a>
-    
-    <a href="javascript:void(0);" id="site-toggle-share-btn">
-      <i class="fa fa-share-alt"></i>
-    </a>
-    
-      <a href="javascript:void(0);" id="site-reward">
-        <i class="fa fa-thumbs-up"></i>
-      </a>
-    
-    <a href="javascript:void(0);" id="back-top-btn">
-      <i class="fa fa-chevron-up"></i>
-    </a>
-  </div>
-</div>
-    <div id="share-btn">
-  
-    <a id="share-btn-twitter" href="javascript:void(0);" target="_blank">
-      <i class="fa fa-twitter"></i>
-    </a>
-  
-  
-    <a id="share-btn-facebook" href="javascript:void(0);" target="_blank">
-      <i class="fa fa-facebook"></i>
-    </a>
-  
-  
-    <a id="share-btn-weibo" href="javascript:void(0);" target="_blank">
-      <i class="fa fa-weibo"></i>
-    </a>
-  
-  
-    <a id="share-btn-qq" href="javascript:void(0);" target="_blank">
-      <i class="fa fa-qq"></i>
-    </a>
-  
-  
-    <a id="share-btn-wechat" href="javascript:void(0);" target="_blank">
-      <i class="fa fa-wechat"></i>
-    </a>
-  
-</div>
-    
+诺苦于贫乏，何以自讨无趣 + 1
+
+
+
+2022/05/26
+
+朱门酒肉臭，路有冻死骨  
+
+其人之啖，众而喜获，其人之遂，哄呛而争。  
+
+诺苦于贫乏，何以自讨无趣
+
+
+
+2022/02/07
+
+“ 稳中向好！”
+
+
+2022/01/09
+为我的“博客”添砖加瓦，写评论，心绪来了:
+
+我的编码轶事，一部分内容在 Windows实用工具 评论里已经阐述了,说来非常惭愧，自2018年以来，计算机与我可谓形影不离，但却实在愧对于它，太菜了，平日里写的都是什么 🐕 * ，编码水平真的有待提高，编程思想【就叫没有思想】，所有引以为傲的代码逻辑，真的不堪入目，故也就不是什么“大神”，平日的笑语竟就我当真。往来也三年了，成长最大的也就近一年，确实固步自封了。编程也许已经成了 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/mklink_rmdir_tools/" title="Mklink 软连接操作器V2.1">Mklink 软连接操作器V2.1</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-21T11:53:29.000Z" title="发表于 2022-06-21 19:53:29">2022-06-21</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content">Mklink 软连接操作器
+
+
+Mklink 软连接操作器
+一款可以帮助你快捷搬运数据的软件，帮你腾出寸土寸金的储存空间😁
+
+封装原理
+
+运行环境
+ 经过测试适用：windows 10 + / windows 7 （32/64bit）   
+
+
+功能 / 使用说明：(V2.1 版更新说明！)V2.1版：
+
+
+优化部分逻辑和运行操作，界面显示  
+优化部分变量的赋值  
+（本版新增）解除软连接（rmdir命令）：可解除已经设置软连接  
+去除黑框
+
+
+说明：
+1.软件操作时都会在运行目录下将搬动的数据以zip格式的压缩包存档，但不保证文件过大时（尤其时正在运行（使用）的文件数据）io冲突时产生zip的损坏，所以建议先备份在使用。  
+2.基于V2版修改，历史遗留问题【多线程】依旧未加入，所以搬运大文件时如果产生【程序无响应】提示，静心等待即可！！！
+3.去除烦人的命令框，所以一些日志和报错就不会在显示（看不到就是没有bug）
+
+
+历史日志：非常简单
+
+1、需要右键以管理员权限运行（mklink的原因)
+（V2版，更新mklink /j 模式，不用管理员权限也可以操作！）
+2、涉及压缩解 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/selenium_webdriver/" title="selenium窗口设置">selenium窗口设置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-19T10:53:29.000Z" title="发表于 2022-06-19 18:53:29">2022-06-19</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0%E6%95%99%E7%A8%8B/">笔记教程</a></span></div><div class="content">selenium 隐藏webdriver窗口
+
+
+解决python+selenuim运行时隐藏ChromeDriver窗口
+运行环境
+ 经过测试适用：windows 10 + / windows 7 （32/64bit）
+ chrome 78 +  
+
+
+
+1：打开python目录 ：~\Lib\site-packages\selenium\webdriver\common下的service.py文件。2：导包：在改文件上面导入：
+
+from subprocess import CREATE_NO_WINDOW  
+
+3：修改字段。找到start函数。如果没 creationflags 这个字段就新增；如果有这个字段看该字段的值是不是我们导入的包名，不是则修改。最后结果如下图所示。  
+
+creationflags=CREATE_NO_WINDOW  
+
+4：保存我们所修改的内容，再次运行代码则不会显示 chormedriver窗口！
+
+123456789101112131415161718192021222324252627282930313233343536373839404142 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/autoplaygui/" title="Autoplay(自动播放GUI)">Autoplay(自动播放GUI)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-14T11:53:29.000Z" title="发表于 2022-06-14 19:53:29">2022-06-14</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content">某视频学习平台视频自动化自动播放（gui修改版）
+
+声明
+本项目仅做交流与测试，请勿用于非法途径
+
+AutoCnkiStuday (Gui)  update log
+运行环境
+ 经过测试适用：windows 10 + / windows 7 （32/64bit）   
+ chrome 78 +  
+
+功能实现（V1.1）
+
+V1.1 优化播控，实现课程选学 
+
+依附于脚本化的功能稳定，封装图形界面
+
+用户数据私有化储存，仅存本地，并实现对用户数据的增加和修改
+
+账号安全性优化, 学习方式多层次调整, 确保账号安全
+
+新增日志显示功能，与时间对应，即时更新，直观学习状态
+
+视频播放智能判断与播放控制优化
+
+
+
+基础界面
+学习展示(v1版，学习功能不变)
+软件信息
+
+其他 / 后续关于源码
+
+
+受限于 【懂得都懂】原因，暂不提供
+
+
+关于更新
+
+
+软件趋于稳定，非重大问题，暂不更新！
+后续反馈请联系： 我
+
+
+关于下载
+
+飞速下载：64位 / 32位
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/autoplay/" title="Autoplay(自动播放)">Autoplay(自动播放)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-12-11T11:53:29.000Z" title="发表于 2021-12-11 19:53:29">2021-12-11</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content">某视频学习平台视频自动化自动播放
+
+声明
+本项目仅做交流与测试，请勿用于非法途径
+
+
+Auto_playV5.2  update log
+ python 3.6 + chrome 78 + windows 10 +
+
+功能实现
+
+多用户学习无忧
+账号安全性优化
+视频播放智能判断与播放控制优化
+
+
+
+
+Auto_playV1 old_log:
+重置与优化，删除冗余，优化播放控制，部分内容未测试自动化测试浏览器: 谷歌73.0.3683.86（32位）python 3.7(64bit) 64位系统适配
+
+功能实现
+1.全自动化登录与课程学习2.已实现多用户登录学习3.已实现多参数修改4.已实现多线程播放5.优化使用逻辑
+
+提供程序入口代码，详细内容见GitHub仓库：点击跳转
+123456789101112131415161718192021222324252627282930313233if __name__ == &#x27;__main__&#x27;:    cfg1 = r&quot;./auto.ini&quot;    conf = configparser.ConfigPa ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/adb-v2/" title="Adb安卓应用管理器V2">Adb安卓应用管理器V2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-09T08:25:53.000Z" title="发表于 2021-11-09 16:25:53">2021-11-09</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content">用于管理安卓手机所有软件的控制器
+
+V2版说明
+在V1（AdbFa）的基础上：
+
+关键字搜索包名
+App部分信息查询（获取较慢，耐心等待）
+各按钮功能提示
+界面排版和细节
+去除 【关闭ADB服务】按钮，软件将在结束运行后自动结束相关进程
+
+
+
+
+Log:
+
+集成大部分实用命令，日常够用
+逻辑应该没问题，也希望大家不要做反人类操作！
+软件由python tkinter模块制作，风格朴素（能用就行）
+
+
+
+源代码，详细内容见GitHub仓库：点击跳转
+执行文件链接新版本链接： https://jingmo.lanzoui.com/i5N4owd4vza
+（不推荐，已淘汰）https://jingmo.lanzoui.com/i1wHjwc04ud
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/webfile-v1/" title="WebFile V1 图形化正式版 &amp; V2内网穿透beta">WebFile V1 图形化正式版 &amp; V2内网穿透beta</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-10-31T07:55:46.000Z" title="发表于 2021-10-31 15:55:46">2021-10-31</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content">内网传输工具图形化
+
+
+WebFile V1 图形化正式版
+沿用原dos窗口改造而来！
+
+
+V1版 图形化正式版介于原版窗口过于丑陋 及 其他因素
+
+实现窗口化并优化一些功能：
+
+1.优化二维码显示
+2.去除冗余消息滚动
+3.增加提示语，增加相关服务终止按钮
+4.各功能实现多线程，拒绝窗口无响应（应该吧！）
+
+
+
+
+V2版 突破内网传输限制不甘于局域网传输限制
+
+利用 ding.exe 在原服务的基础上通过代理突破限制该方法实现最大程度取决于服务商的有无受制于人，且用且珍惜！
+
+
+测试版
+
+由于相关服务的兼容性，只能运行在 64 位客户端上！
+界面沿用 V1 版改造而来，最大保留 所有服务的兼容性
+
+
+
+相关下载V1 正式版https://jingmo.lanzoui.com/ihqofw5i5je
+V2 测试版 由于特殊性，暂时保留
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/webfile-v2/" title="WebFile(局域网传输工具)">WebFile(局域网传输工具)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-30T07:50:22.000Z" title="发表于 2021-09-30 15:50:22">2021-09-30</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content">二改内网传输配置工具
+
+灵感
+得益于 chfs 的发现。
+
+特点
+官网简介：
+
+CuteHttpFileServer/chfs是一个免费的、HTTP协议的文件共享服务器，使用浏览器可以快速访问。它具有以下特点：
 
 
 
 
 
-    
-  </body>
-</html>
+单个文件，核心功能无需其他文件
+跨平台运行，支持主流平台：Windows，Linux和Mac
+界面简洁，简单易用
+支持扫码下载和手机端访问，手机与电脑之间共享文件非常方便
+支持账户权限控制和地址过滤
+支持快速分享文字片段
+支持webdav协议
+与其他常用文件共享方式（如FTP，飞秋，网盘，自己建站）相比，具有使用简单，适用场景更多的优点，在个人使用以及共享给他人的场景中非常方便快捷。
+
+
+
+
+
+相关源码
+仅提供入口代码
+
+12345678910111213141516if __name__ == &#x27;__main__&#x27;:    with open(&#x27;conf.json&#x27;, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as f:        conf = json.loads(f.read ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/qddown/" title="学习强国慕课下载器">学习强国慕课下载器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-23T07:44:13.000Z" title="发表于 2021-09-23 15:44:13">2021-09-23</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content"> 用于下载学习强国 学习视频
+
+1.声明
+本项目二改自 https://github.com/jianboy/crawl_xuexi** 仅做交流与测试，请勿用于非法途径**
+
+
+python 3.9(64bit) 64位系统适配
+
+2.灵感源于学习慕课中有许多高质量的视频
+3.实现原因不是任何时候都网络可供观看原网站不支持下载与倍速
+4.功能实现
+
+在原作者的功能基础上:
+
+已实现多线程下载
+已实现“学习强国APP”下任意的“学习慕课”栏目视频下载
+
+
+
+
+
+
+
+优化界面排版，说明，功能提示
+优化文件储存逻辑
+优化使用逻辑（仅仅是我的逻辑）
+
+
+
+提供程序入口代码，详细内容见GitHub仓库：点击跳转123456789101112131415161718192021if __name__ == &#x27;__main__&#x27;:    print(&quot; | &quot; + &#x27;-&#x27;*56)    print(&quot; |  1.程序正常情况不会闪退，理论无Bug&quot;)    print(&quot; |  2.程序可多开，每个程序工作时 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/bingying/" title="Bing(必应)每日一图下载">Bing(必应)每日一图下载</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-21T07:18:14.000Z" title="发表于 2021-09-21 15:18:14">2021-09-21</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content">一款更新windows桌面壁纸软件
+
+1.环境 &amp; 声明python 3.7.5(32bit) 兼容32和64位系统
+交流与分享，请勿用于非法途径2.灵感 &amp; 说明
+得益于一个偶然的浏览，发现有博主利用php实现对必应每日一图的解析和获取，于是利用python对其进行复现（虽然有可直接用的接口，而毕竟是别人的！😥）,并添加一定的功能！
+
+
+21/06/04 ：初代版本 ，提供图片下载并可自定义设为壁纸.
+
+21/07/06 : 期间太忙，后续使用中发现代码过于臃肿，控制窗口显示非必要信息过多，精简并添加对图片信息和链接文件的储存！
+
+
+正片开始
+首先是博主提供的php版解析接口，使用要求较高，尤其是环境的搭建。
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647&lt;?php/*    * @author www.liumingye.cn*/$filename = &quot;./cache.json&quot;;if (file_exists( ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/beyond/" title="名人传（黄家驹 &amp; beyond）">名人传（黄家驹 &amp; beyond）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-20T07:00:21.000Z" title="发表于 2021-09-20 15:00:21">2021-09-20</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%90%8D%E4%BA%BA%E4%BC%A0/">名人传</a></span></div><div class="content">beyond 🤘
+
+
+Life is not what you have gained but what you have done！ ——beyond有音乐就没世界末日! ——beyond
+
+
+
+
+Beyond，中国香港摇滚乐队，成立于1983年，由黄家驹、黄贯中、黄家强、叶世荣组成。
+1983年参加“山叶吉他比赛”获得冠军并正式出道。
+1986年自资发行乐队首张专辑《再见理想》。
+1988年凭借粤语专辑《秘密警察》在香港乐坛获得关注；同年凭借歌曲《大地》获得十大劲歌金曲奖 。
+1989年凭借歌曲《真的爱你》获得十大中文金曲奖、十大劲歌金曲奖。
+1990年凭借歌曲《光辉岁月》获得十大劲歌金曲奖 。
+1991年主演电影《Beyond日记之莫欺少年穷》；同年9月在香港红磡体育馆举办“Beyond Live 1991 生命接触演唱会”。
+1992年赴日本发展演艺事业。
+1993年凭借粤语专辑《乐与怒》中的歌曲《海阔天空》获得十大中文金曲奖 ；6月30日，黄家驹去世,乐队以三名成员的组成形式继续发展。
+
+
+
+
+
+1994年发行专辑《二楼后座》。
+1995年至1999年发行的《Sound》《 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/todaty_hotjin-ri-re-dian/" title="Todaty_Hot（今日热点）">Todaty_Hot（今日热点）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-02T07:28:09.000Z" title="发表于 2021-09-02 15:28:09">2021-09-02</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content">一款桌面端新闻归集软件
+
+Todaty_Hot(今日热点)构建起因
+各平台今日热搜热文获取，让你一眼知天下！在信息飞速传播的今天，流量为王，信息孤岛就此产生，有时不得不辗转各个平台，网站查阅最新消息。
+
+
+于是，为了紧跟时代步伐，分秒必争，让我们与时俱进！
+
+
+
+
+文件源码，暂时未传至Github
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129#!/usr/bin/python# -*- coding: UTF-8 -*-&quot;&quot;&quot;@author: jing ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/usb-hou-tai-kao-bei/" title="Usb 后台拷贝">Usb 后台拷贝</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-06-30T07:41:34.000Z" title="发表于 2021-06-30 15:41:34">2021-06-30</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content">用户后台静默拷贝文件
+
+开发环境
+1.python 3.7.52.pycharm
+
+初代版本，后续未更新！Python 源码
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455import osimport timeimport shutilfrom os.path import join, getsize# U盘路径USB = &#x27;E:\\&#x27;# 保存路径SAVE = &#x27;D:\\U盘资料&#x27;# 获取U盘中所有文件夹，及文件大小# 形参：理解函数可以实现某种功能的模块，方法。实参，申明实参时，要给一个确定的值def get_dir_size(dir):    # 初始化    size = 0    for root, dirs, files in os.walk(dir):        # 获取U盘中资料大小，推导式        size += sum(getsize(join(root, nam ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/windows-off/" title="Windows实用工具">Windows实用工具</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-05-30T07:10:52.000Z" title="发表于 2021-05-30 15:10:52">2021-05-30</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A0%81/">编码</a></span></div><div class="content">Windows实用工具 · 定时关机
+
+元
+2018 步入编码：
+初始易语言，意为 元
+文件说明:
+1.本工具使用易语言编写2.win10 , win7均完美运行!3.原理: 采用cmd命令,对系统实施指令4.将命令封装成可视化程序,操作便捷
+
+不善言辞，直接看图：（引用本人52论坛图片）
+
+
+
+集成大部分实用命令，日常够用逻辑应该没问题，也希望大家不要做反人类操作！
+
+
+执行文件链接
+工具还是很早以前写的已进行诸多测试尚未发现bug,发现问题还望指正,谢谢!链接:https://www.lanzous.com/i9epn3e
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/huojing/" title="名人传（霍金）">名人传（霍金）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-05-26T05:59:41.000Z" title="发表于 2021-05-26 13:59:41">2021-05-26</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%90%8D%E4%BA%BA%E4%BC%A0/">名人传</a></span></div><div class="content">斯蒂芬·威廉·霍金
+
+
+
+记住要仰望星空，不要低头看脚下。无论生活如何艰难，请保持一颗好奇心。你总会找到自己的路和属于你的成功。 ————斯蒂芬·霍金
+
+
+Stephen William Hawking
+
+（1942年1月8日—2018年3月14日），男，出生于英国牛津，英国剑桥大学著名物理学家，现代最伟大的物理学家之一、20世纪享有国际盛誉的伟人之一。
+
+主要成就:
+
+史蒂芬·威廉·霍金是本世纪享有国际盛誉的伟人之一，剑桥大学数学及理论物理学系教授，当代最重要的广义相对论和宇宙论家。荣获英国剑桥大学卢卡斯数学教席，这是自然科学史上继牛顿和狄拉克之后荣誉最高的教席。
+20世纪70年代他与彭罗斯一道证明了著名的奇性定理，为此他们共同获得了1988年的沃尔夫物理奖。他因此被誉为继爱因斯坦之后世界上最著名的科学思想家和最杰出的理论物理学家。凭一本薄薄的《时间简史》征服了全世界3000万读者。黑洞理论使量子论和热力学在“霍金辐射”中得到完美统一，而他在20世纪80年代提出的无边界设想的量子宇宙论，解决了困扰科学界几百年的“第一推动”问题。
+斯蒂芬·威廉·霍金的研究为理解黑洞和宇宙本源奠定了基础 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/taoyunming/" title="名人传（陶渊明）">名人传（陶渊明）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-05-22T06:32:57.000Z" title="发表于 2021-05-22 14:32:57">2021-05-22</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%90%8D%E4%BA%BA%E4%BC%A0/">名人传</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E8%AF%97%E8%AF%8D/">诗词</a></span></div><div class="content">陶渊明
+
+陶渊明
+（352或365年—427年），名潜，字渊明，又字元亮，自号“五柳先生”，私谥“靖节”，世称靖节先生，浔阳柴桑人。东晋末至南朝宋初期伟大的诗人、辞赋家。曾任江州祭酒、建威参军、镇军参军、彭泽县令等职，最末一次出仕为彭泽县令，八十多天便弃职而去，从此归隐田园。他是中国第一位田园诗人，被称为“古今隐逸诗人之宗”，有《陶渊明集》。
+
+
+时运魏晋· 陶渊明
+时运，游暮春也。春服既成，景物斯和，偶景独游，欣慨交心。
+迈迈时运，穆穆良朝。袭我春服，薄言东郊。山涤余霭，宇暧微霄。有风自南，翼彼新苗。
+洋洋平泽，乃漱乃濯。邈邈遐景，载欣载瞩。称心而言，人亦易足。挥兹一觞，陶然自乐。
+延目中流，悠想清沂。童冠齐业，闲咏以归。我爱其静，寤寐交挥。但恨殊世，邈不可追。
+斯晨斯夕，言息其庐。花药分列，林竹翳如。清琴横床，浊酒半壶。黄唐莫逮，慨独在余。
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/hexoconfig/" title="HEXO 相关参数及配置">HEXO 相关参数及配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-02T06:20:38.000Z" title="发表于 2021-03-02 14:20:38">2021-03-02</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0%E6%95%99%E7%A8%8B/">笔记教程</a></span></div><div class="content">Hexo 博客配置
+
+相关环境的检查123node -v  npm -v  git --version 
+Hexo安装 安装之前可以先安装 cnpm 
+1npm install -g cnpm
+全局安装框架
+1npm install hexo-cli -g
+创建你的博客目录 ; “windows 需要使用管理员权限的cmd 在文件目录创建！！！”
+1hexo init (文件夹)
+进入你博客的目录
+1cd (文件夹)
+复制文件到你博客的目录
+1npm install
+安装Hexo部署插件请在你博客的目录下启动cmd，再执行以下代码
+1npm install hexo-deployer-git --save
+Git的配置验证用户
+12git config --global user.name &quot;用户名&quot;git config --global user.email &quot;用户邮箱&quot;
+生成密钥
+1ssh-keygen -t rsa -C &quot;用户邮箱&quot;
+在用户目录的 .ssh 目录下复制新创建的密钥文件，放置仓库公钥博客 _config. ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jingmo</div><div class="author-info__description">code jingmo blog 静默</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xyhshell"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xyhshell" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:jingmoxyh@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本站所有软件与技术探索均为学习交流使用，本站所有软件仅供交流测试</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jingmo/" title="随笔 - 随缘更新 - for jingmo">随笔 - 随缘更新 - for jingmo</a><time datetime="2098-12-31T17:01:01.000Z" title="发表于 2099-01-01 01:01:01">2099-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/mklink_rmdir_tools/" title="Mklink 软连接操作器V2.1">Mklink 软连接操作器V2.1</a><time datetime="2022-06-21T11:53:29.000Z" title="发表于 2022-06-21 19:53:29">2022-06-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/selenium_webdriver/" title="selenium窗口设置">selenium窗口设置</a><time datetime="2022-06-19T10:53:29.000Z" title="发表于 2022-06-19 18:53:29">2022-06-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/autoplaygui/" title="Autoplay(自动播放GUI)">Autoplay(自动播放GUI)</a><time datetime="2022-06-14T11:53:29.000Z" title="发表于 2022-06-14 19:53:29">2022-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/autoplay/" title="Autoplay(自动播放)">Autoplay(自动播放)</a><time datetime="2021-12-11T11:53:29.000Z" title="发表于 2021-12-11 19:53:29">2021-12-11</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 1.45em; color: rgb(111, 177, 14)">编码</a><a href="/tags/%E5%90%8D%E4%BA%BA%E4%BC%A0/" style="font-size: 1.35em; color: rgb(123, 6, 172)">名人传</a><a href="/tags/%E7%AC%94%E8%AE%B0%E6%95%99%E7%A8%8B/" style="font-size: 1.25em; color: rgb(2, 71, 144)">笔记教程</a><a href="/tags/jingmo/" style="font-size: 1.15em; color: rgb(21, 177, 10)">jingmo</a><a href="/tags/%E8%AF%97%E8%AF%8D/" style="font-size: 1.15em; color: rgb(36, 52, 186)">诗词</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2099/01/"><span class="card-archive-list-date">一月 2099</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">十二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">17</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-12-31T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">10.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-06-25T16:17:13.858Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('http://tool.liumingye.cn/bingimg/img.php')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By jingmo</div><div class="footer_custom_text">❤️ 希望你能好好的 To you ! ❤️ <br> Copyrights © 2021-2022 <a href="https://github.com/xyhshell" target="_blank">Jingmo - Xiao</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    window.typed = new Typed("#subtitle", {
+      strings: ["敬畏自然，技术至上","若非群玉山头见，会向瑶台月下逢","曾经沧海难为水"],
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '敬畏自然，技术至上'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
