@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="jingmo" content="jingmo" />
+  
+  
+  <title>selenium窗口设置 | Code blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="编码,笔记教程," />
+  
+
+  
+  <meta name="description" content="selenium 隐藏webdriver窗口">
+
+  
+    <link rel="alternate" href="/atom.xml" title="Code blog" type="application/atom+xml">
+  
+
+  
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+
+  
+    <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":null,"appkey":null,"comment":false,"count":false},
+    welcome: {"enable":true,"interval":30},
+    start_time: "2021-01-01",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "jingmo",
+    share: {"twitter":true,"facebook":true,"weibo":true,"qq":true,"wechat":true},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  
+<script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+
+  
+    <link rel="icon" href="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180">
+    <link rel="apple-touch-icon" href="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+
+  
+
+
+  <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+<meta name="generator" content="Hexo 5.4.2"></head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">CodeBlog</a>
+      </span>
+    
+    
+      <!-- <span class="site-header-brand-motto"> | <h3>  · 敬畏自然 技术至上</h3></span> -->
+      <span class="site-header-brand-motto">  <h3>  · 敬畏自然 技术至上</h3></span>
+    
+      
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/xyhshell/" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2022-06-19
+    </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    selenium窗口设置
+  </h1>
+  
+  <article class="passage-article">
+    <h1 id="解决python-selenuim运行时隐藏ChromeDriver窗口"><a href="#解决python-selenuim运行时隐藏ChromeDriver窗口" class="headerlink" title="解决python+selenuim运行时隐藏ChromeDriver窗口"></a>解决python+selenuim运行时隐藏ChromeDriver窗口</h1><hr>
+<h1 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h1><blockquote>
+<p> 经过测试适用：windows 10 + / windows 7 （32/64bit）</p>
+<p> chrome 78 +  </p>
+</blockquote>
+<hr>
+<blockquote>
+<p>1：打开python目录 ：~\Lib\site-packages\selenium\webdriver\common下的service.py文件。<br>2：导包：在改文件上面导入：</p>
+<blockquote>
+<p><font color=red>from subprocess import CREATE_NO_WINDOW  </font></p>
+</blockquote>
+<p>3：修改字段。找到start函数。如果没 creationflags 这个字段就新增；如果有这个字段看该字段的值是不是我们导入的包名，不是则修改。最后结果如下图所示。  </p>
+<blockquote>
+<p><font color=red>creationflags=CREATE_NO_WINDOW</font>  </p>
+</blockquote>
+<p>4：保存我们所修改的内容，再次运行代码则不会显示 chormedriver窗口！</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 导入相关包</span></span><br><span class="line"><span class="keyword">from</span> subprocess <span class="keyword">import</span> CREATE_NO_WINDOW</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在~\Lib\site-packages\selenium\webdriver\common下的service.py中</span></span><br><span class="line"><span class="comment"># 找到【start】函数进行修改！！！</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">start</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Starts the Service.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :Exceptions:</span></span><br><span class="line"><span class="string">        - WebDriverException : Raised either when it can&#x27;t start the service</span></span><br><span class="line"><span class="string">        or when it can&#x27;t connect to the service</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cmd = [self.path]</span><br><span class="line">        cmd.extend(self.command_line_args())</span><br><span class="line">        self.process = subprocess.Popen(cmd, env=self.env,</span><br><span class="line">                                        close_fds=platform.system() != <span class="string">&#x27;Windows&#x27;</span>,</span><br><span class="line">                                        stdout=self.log_file,</span><br><span class="line">                                        stderr=self.log_file,</span><br><span class="line">                                        stdin=PIPE,</span><br><span class="line"></span><br><span class="line">                                        <span class="comment"># 需要添加的字段（注意格式）</span></span><br><span class="line">                                        creationflags=CREATE_NO_WINDOW)</span><br><span class="line">    <span class="keyword">except</span> TypeError:</span><br><span class="line">        <span class="keyword">raise</span></span><br><span class="line">    <span class="keyword">except</span> OSError <span class="keyword">as</span> err:</span><br><span class="line">        <span class="keyword">if</span> err.errno == errno.ENOENT:</span><br><span class="line">            <span class="keyword">raise</span> WebDriverException(</span><br><span class="line">                <span class="string">&quot;&#x27;%s&#x27; executable needs to be in PATH. %s&quot;</span> % (</span><br><span class="line">                    os.path.basename(self.path), self.start_error_message)</span><br><span class="line">            )</span><br><span class="line">        <span class="keyword">elif</span> err.errno == errno.EACCES:</span><br><span class="line">            <span class="keyword">raise</span> WebDriverException(</span><br><span class="line">                <span class="string">&quot;&#x27;%s&#x27; executable may have wrong permissions. %s&quot;</span> % (</span><br><span class="line">                    os.path.basename(self.path), self.start_error_message)</span><br><span class="line">            )</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">raise</span> WebDriverException(</span><br><span class="line">            <span class="string">&quot;The executable %s needs to be available in the path. %s\n%s&quot;</span> %</span><br><span class="line">            (os.path.basename(self.path), self.start_error_message, <span class="built_in">str</span>(e)))</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        self.assert_process_still_running()</span><br><span class="line">        <span class="keyword">if</span> self.is_connectable():</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> count == <span class="number">30</span>:</span><br><span class="line">            <span class="keyword">raise</span> WebDriverException(<span class="string">&quot;Can not connect to the Service %s&quot;</span> % self.path)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="引用地址：解决python-selenuim运行时隐藏ChromeDriver窗口"><a href="#引用地址：解决python-selenuim运行时隐藏ChromeDriver窗口" class="headerlink" title="引用地址：解决python+selenuim运行时隐藏ChromeDriver窗口"></a>引用地址：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zdk_001/article/details/124431431?share_token=140c4033-6f2c-42b4-81c8-8d3f7956f543">解决python+selenuim运行时隐藏ChromeDriver窗口</a></h2>
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3python-selenuim%E8%BF%90%E8%A1%8C%E6%97%B6%E9%9A%90%E8%97%8FChromeDriver%E7%AA%97%E5%8F%A3"><span class="toc-text">解决python+selenuim运行时隐藏ChromeDriver窗口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">运行环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E5%9C%B0%E5%9D%80%EF%BC%9A%E8%A7%A3%E5%86%B3python-selenuim%E8%BF%90%E8%A1%8C%E6%97%B6%E9%9A%90%E8%97%8FChromeDriver%E7%AA%97%E5%8F%A3"><span class="toc-text">引用地址：解决python+selenuim运行时隐藏ChromeDriver窗口</span></a></li></ol></li></ol>
+  </div>
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: jingmo</div>
+      
+        <div>
+          原文链接: 
+          <a href="" target="_blank">http://xyhshell.github.io/selenium_webdriver/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
+  
+  
+    <div class="passage-tags">
+     
+      <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
+     
+      <a href="/tags/%E7%AC%94%E8%AE%B0%E6%95%99%E7%A8%8B/"><i class="fa fa-tags"></i>笔记教程</a>
+    
+    </div>
+  
+</div>
+
+    </main>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+
+
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i>
+        <span id="busuanzi_container_site_pv">您是本站第 <span id="busuanzi_value_site_pv"></span> 位访客</span>
+      </div>
+    
+
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已在风雨中飘摇 <span id="site-time"></span>
+    </div>
+
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2021 <a href="https://github.com/Xyhshell/xyhshell.github.io" target="_blank">Code blog</a>.
+      Created by <a href="https://github.com/Xyhshell/" target="_blank">Jingmo</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <div class="site-layer-input-choose">
+          <a href="javascript:void(0);" title="Change Search Engine">Bing</a>
+        </div>
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      
+        <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+          
+            <div>
+              <img src="/images/1653196680830.jpg" alt="WeChat">
+              
+                <p>WeChat</p>
+              
+            </div>
+          
+        </div>
+      
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/mklink_rmdir_tools/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/autoplaygui/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    
+      <a href="javascript:void(0);" id="site-reward">
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+    <a id="share-btn-twitter" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-twitter"></i>
+    </a>
+  
+  
+    <a id="share-btn-facebook" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-facebook"></i>
+    </a>
+  
+  
+    <a id="share-btn-weibo" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-weibo"></i>
+    </a>
+  
+  
+    <a id="share-btn-qq" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-qq"></i>
+    </a>
+  
+  
+    <a id="share-btn-wechat" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-wechat"></i>
+    </a>
+  
+</div>
+    
+
+
+
+
+
+    
+  </body>
+</html>

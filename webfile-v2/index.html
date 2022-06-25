@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="jingmo" content="jingmo" />
+  
+  
+  <title>WebFile(局域网传输工具) | Code blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="编码," />
+  
+
+  
+  <meta name="description" content="二改内网传输配置工具">
+
+  
+    <link rel="alternate" href="/atom.xml" title="Code blog" type="application/atom+xml">
+  
+
+  
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+
+  
+    <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":null,"appkey":null,"comment":false,"count":false},
+    welcome: {"enable":true,"interval":30},
+    start_time: "2021-01-01",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "jingmo",
+    share: {"twitter":true,"facebook":true,"weibo":true,"qq":true,"wechat":true},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  
+<script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+
+  
+    <link rel="icon" href="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180">
+    <link rel="apple-touch-icon" href="http://p1.music.126.net/fGNCB3dV31wX7ZF2mglZdg==/109951164755221775.jpg?param=180y180">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+
+  
+
+
+  <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+<meta name="generator" content="Hexo 5.4.2"></head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">CodeBlog</a>
+      </span>
+    
+    
+      <!-- <span class="site-header-brand-motto"> | <h3>  · 敬畏自然 技术至上</h3></span> -->
+      <span class="site-header-brand-motto">  <h3>  · 敬畏自然 技术至上</h3></span>
+    
+      
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/xyhshell/" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2021-09-30
+    </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    WebFile(局域网传输工具)
+  </h1>
+  
+  <article class="passage-article">
+    <h1 id="灵感"><a href="#灵感" class="headerlink" title="灵感"></a>灵感</h1><blockquote>
+<p>得益于 <a target="_blank" rel="noopener" href="http://iscute.cn/chfs">chfs</a> 的发现。</p>
+</blockquote>
+<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><blockquote>
+<p>官网简介：</p>
+<ul>
+<li>CuteHttpFileServer/chfs是一个免费的、HTTP协议的文件共享服务器，使用浏览器可以快速访问。它具有以下特点：</li>
+</ul>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>单个文件，核心功能无需其他文件</li>
+<li>跨平台运行，支持主流平台：Windows，Linux和Mac</li>
+<li>界面简洁，简单易用</li>
+<li>支持扫码下载和手机端访问，手机与电脑之间共享文件非常方便</li>
+<li>支持账户权限控制和地址过滤</li>
+<li>支持快速分享文字片段</li>
+<li>支持webdav协议</li>
+<li>与其他常用文件共享方式（如FTP，飞秋，网盘，自己建站）相比，具有使用简单，适用场景更多的优点，在个人使用以及共享给他人的场景中非常方便快捷。</li>
+</ul>
+</blockquote>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/XQY7Ps"><img src="https://s1.ax1x.com/2022/05/29/XQY7Ps.jpg" alt="XQY7Ps.jpg"></a></p>
+<hr>
+<h1 id="相关源码"><a href="#相关源码" class="headerlink" title="相关源码"></a>相关源码</h1><blockquote>
+<p>仅提供入口代码</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;conf.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        conf = json.loads(f.read())</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;获取配置成功&#x27;</span>)</span><br><span class="line">    user = <span class="built_in">str</span>(conf[<span class="string">&#x27;username&#x27;</span>][<span class="number">0</span>])</span><br><span class="line">    passwd = <span class="built_in">str</span>(conf[<span class="string">&#x27;passwd&#x27;</span>][<span class="number">0</span>])</span><br><span class="line">    public = <span class="built_in">str</span>(conf[<span class="string">&#x27;public&#x27;</span>][<span class="number">0</span>])</span><br><span class="line">    open_file = openpath()</span><br><span class="line">    myqr.run(words=get_host_ip(), save_name=<span class="string">&quot;ip.png&quot;</span>)</span><br><span class="line">    sleep(<span class="number">1</span>)</span><br><span class="line">    os.startfile(<span class="string">r&quot;ip.png&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;当前用户：<span class="subst">&#123;user&#125;</span>&#x27;</span>, <span class="string">f&#x27;\n当前开放路径：<span class="subst">&#123;open_file&#125;</span>&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> public == <span class="string">&#x27;yes&#x27;</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;\n当前用户公开性为：<span class="subst">&#123;public&#125;</span>，登录账号：<span class="subst">&#123;user&#125;</span> - 密码：<span class="subst">&#123;passwd&#125;</span>&#x27;</span>)</span><br><span class="line">    online(path=open_file, user=user, passwd=passwd)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<h1 id="二改功能"><a href="#二改功能" class="headerlink" title="二改功能"></a>二改功能</h1><p>依据于其功能特性，高度定制，赋予其他功能！优化使用逻辑！</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>为了便于轻量化，并未制作界面，运行信息依旧在Cmd窗口。</li>
+<li>根据官方文档，去除冗余配置文件，保留基础功能：<blockquote>
+<ul>
+<li>参数- “public”：为yes时，显示管理员账号密码，由此所有用户拥有 增删查改 的最高权限。</li>
+<li>参数- “username”：配置管理员账号。</li>
+<li>参数- “passwd”：配置管理员密码。</li>
+</ul>
+</blockquote>
+</li>
+<li>默认端口 1234 (不支持自定义)</li>
+<li>使用逻辑：<blockquote>
+<ul>
+<li>不在由配置文件提供分享目录，软件运行后由用户自行选择。</li>
+<li>成功选择目录后，将由系统默认图片查看器打开软件生成二维码，便于手机用户手动输入ip进行连接。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="End-可执行文件地址"><a href="#End-可执行文件地址" class="headerlink" title="End - 可执行文件地址"></a>End - 可执行文件地址</h1><p>(不推荐)<br><a target="_blank" rel="noopener" href="https://jingmo.lanzoui.com/iOxe8uq6fre">https://jingmo.lanzoui.com/iOxe8uq6fre</a></p>
+<p>V1 图形化修改版<br><a target="_blank" rel="noopener" href="https://jingmo.lanzoui.com/ihqofw5i5je">https://jingmo.lanzoui.com/ihqofw5i5je</a></p>
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%81%B5%E6%84%9F"><span class="toc-text">灵感</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%BA%90%E7%A0%81"><span class="toc-text">相关源码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E6%94%B9%E5%8A%9F%E8%83%BD"><span class="toc-text">二改功能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#End-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80"><span class="toc-text">End - 可执行文件地址</span></a></li></ol>
+  </div>
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: jingmo</div>
+      
+        <div>
+          原文链接: 
+          <a href="" target="_blank">http://xyhshell.github.io/webfile-v2/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
+  
+  
+    <div class="passage-tags">
+     
+      <a href="/tags/%E7%BC%96%E7%A0%81/"><i class="fa fa-tags"></i>编码</a>
+    
+    </div>
+  
+</div>
+
+    </main>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+
+
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i>
+        <span id="busuanzi_container_site_pv">您是本站第 <span id="busuanzi_value_site_pv"></span> 位访客</span>
+      </div>
+    
+
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已在风雨中飘摇 <span id="site-time"></span>
+    </div>
+
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2021 <a href="https://github.com/Xyhshell/xyhshell.github.io" target="_blank">Code blog</a>.
+      Created by <a href="https://github.com/Xyhshell/" target="_blank">Jingmo</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <div class="site-layer-input-choose">
+          <a href="javascript:void(0);" title="Change Search Engine">Bing</a>
+        </div>
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      
+        <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+          
+            <div>
+              <img src="/images/1653196680830.jpg" alt="WeChat">
+              
+                <p>WeChat</p>
+              
+            </div>
+          
+        </div>
+      
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/webfile-v1/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/qddown/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    
+      <a href="javascript:void(0);" id="site-reward">
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+    <a id="share-btn-twitter" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-twitter"></i>
+    </a>
+  
+  
+    <a id="share-btn-facebook" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-facebook"></i>
+    </a>
+  
+  
+    <a id="share-btn-weibo" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-weibo"></i>
+    </a>
+  
+  
+    <a id="share-btn-qq" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-qq"></i>
+    </a>
+  
+  
+    <a id="share-btn-wechat" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-wechat"></i>
+    </a>
+  
+</div>
+    
+
+
+
+
+
+    
+  </body>
+</html>
