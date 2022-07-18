@@ -1,4 +1,5 @@
 http://xyhshell.github.io/jingmo/
+http://xyhshell.github.io/autoplayguiV2.0.4/
 http://xyhshell.github.io/mklink_rmdir_tools/
 http://xyhshell.github.io/selenium_webdriver/
 http://xyhshell.github.io/autoplaygui/
